@@ -1,0 +1,48 @@
+body {
+  margin: 0 auto;
+  max-width: 50em;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  line-height: 1.5;
+  padding: 4em 1em;
+  color: #566b78;
+  text-align: center;
+}
+h1 {
+	font-size: 4em;
+ 	color: #1334F1;
+  line-height: 1.2;
+  text-align: center;
+}
+table {
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid black;
+}
+td {
+	width: 33%;
+}
+strong {
+  color: #333;
+}
+.resp {
+	color: #52E906;
+}
+a {
+  border: 1px solid #1334F1;
+  border-radius: 290486px;
+  color: #1334F1;
+  font-size: 0.6em;
+  letter-spacing: 0.2em;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: none 200ms ease-out;
+  transition-property: color, background;
+}
+a:hover {
+  background:  #1334F1;
+  color: white;
+}
