@@ -6,14 +6,22 @@ let nb = document.getElementById("nb");
 const preciojohn = 899;
 const preciocepillo = 14.99;
 const precio3220 = 119;
+var sj = 20;
+var sc = 50;
+var sn = 10;
 var total = 0;
 
 jb.onclick = () => {
 	var buyj = confirm("¿Deseas comprar a JOHN?");
 	if (buyj == true) {
 		var aj = prompt("Cuantós JOHN deseas comprar?");
-		total += (preciojohn*aj);
-		totalcompra(total);
+		if (aj > sj) {
+			alert("No hay suficientes unidades disponibles. Unidades en STOCK: " + sj);
+		} else {
+			sj = sj - aj;
+			total += (preciojohn*aj);
+			totalcompra(total);
+		}
 	}
 }
 
@@ -21,8 +29,13 @@ cb.onclick = () => {
 	var buyc = confirm("¿Deseas comprar CEPILLO?");
 	if (buyc == true) {
 		var ac = prompt("Cuantós CEPILLOS deseas comprar?");
-		total += (preciocepillo*ac);
-		totalcompra(total);
+		if (ac > sc) {
+			alert("No hay suficientes unidades disponibles. Unidades en STOCK: " + sc);
+		} else {
+			sc = sc- ac;
+			total += (preciocepillo*ac);
+			totalcompra(total);
+		}
 	}
 }
 
@@ -30,8 +43,13 @@ nb.onclick = () => {
 	var buyn = confirm("¿Deseas comprar NOKIA-3220?");
 	if (buyn == true) {
 		var an = prompt("Cuantós NOKIA-3220 deseas comprar?");
-		total += (precio3220*an);
-		totalcompra(total);
+		if (an > sn) {
+			alert("No hay suficientes unidades disponibles. Unidades en STOCK: " + sn);
+		} else {
+			sn = sn - an;
+			total += (precio3220*an);
+			totalcompra(total);
+		}
 	}
 }
 
