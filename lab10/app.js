@@ -1,8 +1,8 @@
 const http = require('http');
 var fs = require('fs');
+const boxeadores = ["Canelo", "Terrence", "Inoue", "Teófimo"];
 
 const server = http.createServer( (request, response) => {
-    const boxeadores = ["Canelo Álvarez", "Terrence Crawford", "Naoya Inoue", "Errol Spence Jr.", "Teófimo López"];
     if (request.url === "/boxeadores") {
         response.setHeader('Content-Type', 'text/html');
         response.write("<html>");
