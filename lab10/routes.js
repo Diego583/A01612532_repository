@@ -1,3 +1,6 @@
+const boxeadores = ["Canelo", "Terrence", "Inoue", "Teófimo"];
+var fs = require('fs');
+
 const requestHandler = (request, response) => {
     if (request.url === "/boxeadores") {
         response.setHeader('Content-Type', 'text/html');
