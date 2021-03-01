@@ -42,6 +42,8 @@ const requestHandler = (request, response) => {
             const nuevo_boxeador = datos_completos.split('=')[1];
             boxeadores.push(nuevo_boxeador);
             fs.writeFileSync('mejoresboxeadores.txt', boxeadores);
+            response.statusCode = 302;
+            response.setHeader('Location', '/boxeadores')
             return response.end();
         });
 
