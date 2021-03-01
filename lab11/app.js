@@ -1,30 +1,24 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
+const rutasboxeadores = require('./routes/boxeadores');
+const rutasautos = require('./routes/autos');
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use('/boxeadores', rutasboxeadores);
+app.use('/autos', rutasautos);
 
-app.get('/agregarboxeador', (request, response, next) => {
-    response.send('<html><head><meta charset="UTF-8"><title>Servidor node</title></head><body><h1>Agrega otro boxeador</h1><form action="agregarboxeador" method="POST"><input type="text" name="nombre"><input type="submit" value="Guardar boxeador"></form></body></html>'); 
-});
-
-app.post('/agregarboxeador', (request, response, next) => {
-    console.log(request.body.nombre);
-    response.send('<h1>Boxeador guardado</h1>');
-});
-
-app.use((request, response, next) => {
-    console.log('Middleware!');
-    next(); //Le permite a la petición avanzar hacia el siguiente middleware
-});
-
-app.use('/ruta', (request, response, next) => {
-    response.send('Respuesta de la ruta "/ruta"'); 
+app.get('/', (request, response, next) => {
+	let html = '<h1>RUTAS</h1>';
+	html += '<p>BOX:</p>';
+    html += '<form action="/boxeadores" method="GET"><button>Mejores boxeadores</button></form>';
+    html += '<form action="/boxeadores/agregarboxeador" method="GET"><button>Agregar boxeador</button></form>'; 
+    html += '<p>AUTOS:</p>';
+    html += '<form action="/autos" method="GET"><button>GIFS</button></form>';
+    html += '<form action="/autos/lamborghini" method="GET"><button>Lamborghini</button></form>'; 
+    response.send(html); 
 });
 
 app.use((request, response, next) => {
-    console.log('Otro middleware!');
-    response.send('¡Hola mundo!'); //Manda la respuesta
+	response.status(404).send('<h1>Recurso no encontrado</h1>');
 });
 
 app.listen(3000);
