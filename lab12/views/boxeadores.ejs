@@ -1,0 +1,16 @@
+<%- include('partials/head.ejs') %>
+<body>
+	<h1>Boxeadores</h1><ol>
+		<ol>
+			<%for (let boxeador of lista_boxeadores) { %>
+				<li> <%= boxeador %> </li>
+			<% } %>
+		</ol>
+		<br>
+		<br>
+	<footer>		
+		<a href="/boxeadores/agregarboxeador" title="IR A agregarboxeador">Agregar boxeador</a>
+		<a href="/" title="REGRESA A Menu RUTAS">Menu RUTAS</a>
+	</footer>
+</body>
+</html>

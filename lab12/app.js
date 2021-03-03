@@ -1,22 +1,21 @@
 const express = require('express');
 const app = express();
+const rutasboxeadores = require('./routes/boxeadores');
+const rutasautos = require('./routes/autos');
 const path = require('path');
 
-app.get('/git', (request, response, next) => {
-    response.sendFile(path.join(__dirname, 'views', 'git.html'));
-});
-
+app.use('/boxeadores', rutasboxeadores);
+app.use('/autos', rutasautos);
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 app.get('/', (request, response, next) => {
-	let html = '<h1>RUTAS</h1>';
-    html += '<form action="/git" method="GET"><button>TIENDA</button></form>'; 
-    response.send(html); 
+    response.sendFile(path.join(__dirname,'views', 'git.html'));
 });
 
 app.use((request, response, next) => {
-	response.status(404).send('<h1>Recurso no encontrado</h1>');
+	response.status(404).sendFile(path.join(__dirname,'views', 'notFound.html'));
 });
-
 
 app.listen(3000);

@@ -37,7 +37,8 @@ p {
   width: 33.33%;
   text-align: center;
   position: relative;
-  left: 66.8%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cbox {
   padding: 1em;
@@ -91,10 +92,6 @@ a {
 a:hover {
   background:  #1334F1;
   color: white;
-}
-img {
-  width: 160px;
-  height: 339.5px;
 }
 
 .button {
