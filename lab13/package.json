@@ -1,0 +1,30 @@
+{
+  "name": "lab13",
+  "version": "1.0.0",
+  "description": "lab13",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diego583/A01612532_repository.git"
+  },
+  "keywords": [
+    "mvc"
+  ],
+  "author": "Diego",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diego583/A01612532_repository/issues"
+  },
+  "homepage": "https://github.com/Diego583/A01612532_repository#readme"
+}

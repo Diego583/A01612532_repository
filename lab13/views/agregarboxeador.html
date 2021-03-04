@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Servidor node.</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+	<div class="btn-group" role="group">
+		<button id="btnGroupDrop1" type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">IR A</button>
+		<ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+			<li><a class="dropdown-item" href="/" title="REGRESA A Menu RUTAS">Menu RUTAS</a></li>
+			<li><a class="dropdown-item" href="/boxeadores" title="IR A boxeadores">Mejores boxeadores</a></li>
+		</ul>
+	</div>				
+	<h1 class="display-1 text-center">Agrega otro boxeador</h1><ol>
+		<br>
+		 <form action="agregarboxeador" method="POST">
+		 	<input type="text" name="nombre">
+		 	<input type="text" name="apellido">
+		 	<input type="text" name="imagen">
+		 	<input type="submit" value="Guardar boxeador">
+		 </form>
+	<footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	</footer>
+</body>
+</html>
