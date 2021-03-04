@@ -1,7 +1,7 @@
-const boxeadores = [{nombre: "Canelo", apellido: "Álvarez", imagen: "https://i2.wp.com/naciondeportes.com/wp-content/uploads/2021/01/canelo-alvarez-peleara-el-27-de-febrero-de-2021-1.jpg?fit=1000%2C600&ssl=1"}, 
-{nombre: "Terrence", apellido: "Crawford", imagen: "https://cdn.vox-cdn.com/thumbor/GSE3md1MaKVNLw4AyAu76_2UXk0=/0x570:3200x2383/1200x800/filters:focal(1344x649:1856x1161)/cdn.vox-cdn.com/uploads/chorus_image/image/65908497/1194018076.jpg.0.jpg"},
-{nombre: "Naoya", apellido: "Inoue", imagen: "https://bolavip.com/__export/1610983419348/sites/bolavip/img/2021/01/18/naoyainoueee_crop1610983418960.jpg_1902800913.jpg"}, 
-{nombre: "Teófimo", apellido: "López", imagen: "https://cdn.vox-cdn.com/thumbor/vfvMgkWJLDEEBkzAIGQVjOZlsac=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/21969724/i.jpg"}];
+const boxeadores = [{nombre: "Muhammad", apellido: "Ali", imagen: "https://www.latercera.com/resizer/C_k9DdkglQEVdNbN2mFwtRr6BZI=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/J5SBLOXXF5GCRCD7ZJXNEWKDXI.jpg"}, 
+{nombre: "Floyd", apellido: "Mayweather Jr.", imagen: "https://i0.wp.com/naciondeportes.com/wp-content/uploads/2020/12/floyd-mayweather-jr-pelea-logan-paul.jpg?fit=1000%2C600&ssl=1"},
+{nombre: "Sugar", apellido: "Ray Robinson", imagen: "https://i2.wp.com/elroundfinal.com/wp-content/uploads/2019/08/sugar-ray-robinson-LN-CQ-750x400.jpg?fit=625%2C390&ssl=1"}, 
+{nombre: "Mike", apellido: "Tyson", imagen: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mike-tyson-stands-in-the-ring-during-the-fight-with-carl-news-photo-1606561448."}];
 
 module.exports = class Boxeador {
     constructor(nombre, apellido, imagen) {

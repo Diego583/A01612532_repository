@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-var fs = require('fs');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const boxeadoresController = require('../controllers/boxeadores_controller');

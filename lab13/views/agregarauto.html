@@ -34,19 +34,24 @@
 			</div>
 		</div>
 	</nav>
-	<h1 class="display-1 text-center">GIFS AUTOS</h1>
-	<h2 class="display-6 text-center">Mclaren P1</h2>
-	<img class="rounded mx-auto d-block" src="https://media1.giphy.com/media/aA7WDclCy08hy/giphy.gif" alt="P1">
-	<br>
-	<br>
-	<h2 class="display-6 text-center">Aventadors @night</h2>
-	<img class="rounded mx-auto d-block" src="https://i.pinimg.com/originals/0b/0d/3b/0b0d3bceba7d0b5dbe7435f3707edbb8.gif" alt="Aventador @night">
-	<br>
-	<br> 
-	<h2 class="display-6 text-center">F40 :O</h2>
-	<img class="rounded mx-auto d-block" src="https://i.pinimg.com/originals/a2/7a/66/a27a66773c419a3c2de96b63b53f81c7.gif" alt="Ferrari F40">
-	<br>
-	<br>
+	<h1 class="display-1 text-center">Agregar auto</h1><ol>
+		<br>
+		 <form class="row g-3" action="agregarauto" method="POST">
+		 	<div class="row g-3">
+				<div class="col">
+					<input type="text" name="marca" class="form-control" placeholder="Brand" aria-label="First name">
+				</div>
+				<div class="col">
+					<input type="text" name="modelo" class="form-control" placeholder="Model" aria-label="Last name">
+				</div>
+				<div class="col-12">
+					<input type="text" name="imagen" class="form-control" placeholder="Picture url" aria-label="picture">
+				</div>
+				<div class="col-12 mx-auto">
+					<input class="btn btn-primary" type="submit" value="Guardar">
+				</div>
+			</div>
+		 </form>
 	<footer>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 	</footer>

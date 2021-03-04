@@ -7,20 +7,50 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
-	<div class="btn-group" role="group">
-		<button id="btnGroupDrop1" type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">IR A</button>
-		<ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-			<li><a class="dropdown-item" href="/" title="REGRESA A Menu RUTAS">Menu RUTAS</a></li>
-			<li><a class="dropdown-item" href="/boxeadores" title="IR A boxeadores">Mejores boxeadores</a></li>
-		</ul>
-	</div>				
-	<h1 class="display-1 text-center">Agrega otro boxeador</h1><ol>
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/" title="REGRESA A HOME">HOME</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="/boxeadores" title="IR A boxeadores">MEJORES BOXEADORES</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/boxeadores/agregarboxeador" title="IR A agregarboxeador">AGREGAR BOXEADOR</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/autos" title="IR A autos">GIFS AUTOS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/autos/dreamgarage" title="IR A dream garage">DREAM GARAGE</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/autos/agregarauto" title="agregarauto"> AGREGAR AUTO</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<h1 class="display-1 text-center">Agregar boxeador</h1><ol>
 		<br>
-		 <form action="agregarboxeador" method="POST">
-		 	<input type="text" name="nombre">
-		 	<input type="text" name="apellido">
-		 	<input type="text" name="imagen">
-		 	<input type="submit" value="Guardar boxeador">
+		 <form class="row g-3" action="agregarboxeador" method="POST">
+		 	<div class="row g-3">
+				<div class="col">
+					<input type="text" name="nombre" class="form-control" placeholder="First name" aria-label="First name">
+				</div>
+				<div class="col">
+					<input type="text" name="apellido" class="form-control" placeholder="Last name" aria-label="Last name">
+				</div>
+				<div class="col-12">
+					<input type="text" name="imagen" class="form-control" placeholder="Picture url" aria-label="picture">
+				</div>
+				<div class="col-12 mx-auto">
+					<input class="btn btn-primary" type="submit" value="Guardar">
+				</div>
+			</div>
 		 </form>
 	<footer>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
