@@ -1,0 +1,4 @@
+¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?
+- Permite mantener el código de la aplicación ordenado y por lo tanto más accesible para modificaciones.
+¿Qué es SQL injection y cómo se puede prevenir?
+- es un método de infiltración de código SQL intruso y se puede prevenir validando las entradas o colocando ? como VALUES al usar la sentencia de INSERT.

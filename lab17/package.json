@@ -1,0 +1,34 @@
+{
+  "name": "lab17",
+  "version": "1.0.0",
+  "description": "lab17",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diego583/A01612532_repository.git"
+  },
+  "keywords": [
+    "database"
+  ],
+  "author": "Diego",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diego583/A01612532_repository/issues"
+  },
+  "homepage": "https://github.com/Diego583/A01612532_repository#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5"
+  }
+}
