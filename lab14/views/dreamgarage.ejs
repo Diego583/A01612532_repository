@@ -1,0 +1,29 @@
+<%- include('partials/head.ejs') %>
+<body>
+	<%- include('partials/navbar.ejs') %>
+	<h1 class="display-1 text-center">DREAM GARAGE</h1>
+	<% if(isLogged) { %>
+		<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			<a class="btn btn-dark" href="/autos/agregarauto" title="AGREGAR AUTO">+</a>
+		</div>
+	<% } %>
+	<div class="container">
+		<div class="row">
+			<%for (let auto of lista_autos) { %>
+				<div class="card bg-light mx-auto col-lg-4 col-md-6 col-sm-12">
+					<div class="card-header text-center">
+						<%= auto.marca + " " + auto.modelo%>	
+					</div>
+					<div class="card-body">
+						<img src="<%= auto.imagen %>" class="card-img" alt="foto" height="100%">
+					</div>
+				</div>
+			<% } %>
+		</div>
+	</div>
+	<footer>
+		<br><br>		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	</footer>
+</body>
+</html>
