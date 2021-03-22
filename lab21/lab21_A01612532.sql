@@ -62,7 +62,8 @@ WHERE Clave NOT IN (SELECT Clave FROM Entregan)
 -- Razón social de los proveedores que han realizado entregas tanto al proyecto 'Vamos México' como al proyecto 'Querétaro Limpio'.
 SELECT RAZONSOCIAL
 FROM Proveedores
-WHERE RFC IN (SELECT RFC FROM ENTREGAN WHERE Numero = 5000 OR Numero = 5019)
+WHERE RFC IN (SELECT RFC FROM ENTREGAN WHERE Numero IN (SELECT NUMERO FROM Proyectos 
+WHERE Denominacion = 'Vamos Mexico' OR Denominacion = 'Queretaro Limpio'))
 
 -- Razón social y promedio de cantidad entregada de los proveedores cuyo promedio de cantidad entregada es mayor al promedio 
 -- de la cantidad entregada por el proveedor con el RFC 'VAGO780901'.
