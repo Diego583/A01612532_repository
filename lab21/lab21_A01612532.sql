@@ -63,7 +63,9 @@ WHERE Clave NOT IN (SELECT Clave FROM Entregan)
 SELECT RAZONSOCIAL
 FROM Proveedores
 WHERE RFC IN (SELECT RFC FROM ENTREGAN WHERE Numero IN (SELECT NUMERO FROM Proyectos 
-WHERE Denominacion = 'Vamos Mexico' OR Denominacion = 'Queretaro Limpio'))
+WHERE Denominacion = 'Queretaro Limpio'))
+AND RFC IN (SELECT RFC FROM ENTREGAN WHERE Numero IN (SELECT NUMERO FROM Proyectos 
+WHERE Denominacion = 'Vamos Mexico'))
 
 -- Razón social y promedio de cantidad entregada de los proveedores cuyo promedio de cantidad entregada es mayor al promedio 
 -- de la cantidad entregada por el proveedor con el RFC 'VAGO780901'.
