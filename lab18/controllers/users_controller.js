@@ -3,10 +3,10 @@ const bcrypt = require('bcryptjs');
 const session = require('express-session');
 
 exports.getLogIn = (request, response, next) => {
+	console.log("csruf: "+request.csrfToken());
 	response.render('login', {
 		titulo: 'Inicia sesión',
 		error: request.session.error,
-		csrfToken: request.csrfToken(),
 		isLogged: request.session.isLogged === true ? true : false
 	});
 }
@@ -18,7 +18,7 @@ exports.postLogIn = (request, response, next) => {
 	.then(([rows, fieldData]) => {
 		if (rows.length < 1) {
 			request.session.error = 'Usuario y/o contraseña incorrectos.';
-			response.redirect('/users');
+			response.redirect('/users/login');
 		} else 
 		bcrypt.compare(request.body.password, rows[0].password)
 	    .then(doMatch => {
@@ -30,10 +30,10 @@ exports.postLogIn = (request, response, next) => {
 	            });
 	        }
 	        request.session.error = 'Usuario y/o contraseña incorrectos.';
-	        response.redirect('/users');
+	        response.redirect('/users/login');
 	    }).catch(err => {
 	    	request.session.error = 'Usuario y/o contraseña incorrectos.';
-	        response.redirect('/users');
+	        response.redirect('/users/login');
 	    });        
     })
     .catch(err => {

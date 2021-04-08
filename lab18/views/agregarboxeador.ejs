@@ -3,7 +3,7 @@
 	<%- include('partials/navbar.ejs') %>
 	<h1 class="display-1 text-center"><%= titulo %></h1><ol>
 		<br>
-		 <form class="row g-3" action="agregarboxeador" method="POST">
+		 <form class="row g-3" action="agregarboxeador?_csrf=<%=csrfToken%>" method="POST">
 		 	<div class="row g-3">
 				<div class="col">
 					<input type="text" name="nombre" class="form-control" placeholder="First name" aria-label="First name">

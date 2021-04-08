@@ -35,7 +35,7 @@ FROM Entregan E, Materiales M, Proveedores P
 WHERE E.Clave = M.Clave
 AND E.RFC = P.RFC
 GROUP BY RAZONSOCIAL, M.CLAVE, DESCRIPCION
-HAVING AVG(CANTIDAD)> 500
+HAVING AVG(CANTIDAD)<500
 
 -- Mostrar en una solo consulta los mismos datos que en la consulta anterior pero para dos grupos de proveedores: 
 -- aquellos para los que la cantidad promedio entregada es menor a 370 y aquellos para los que la cantidad promedio entregada 
@@ -46,6 +46,7 @@ WHERE E.Clave = M.Clave
 AND E.RFC = P.RFC
 GROUP BY RAZONSOCIAL, M.CLAVE, DESCRIPCION
 HAVING AVG(CANTIDAD) < 370 OR AVG(CANTIDAD) > 450
+ORDER BY RazonSocial DESC, [AVGmaterial] DESC
 
 -- Insertar 5 nuevos materiales
 INSERT INTO Materiales VALUES (1440, 'Bloque de hormigón', 50, 1);

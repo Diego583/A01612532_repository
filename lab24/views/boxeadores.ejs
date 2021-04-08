@@ -1,0 +1,68 @@
+<%- include('partials/head.ejs') %>
+<body>
+	<%- include('partials/navbar.ejs') %>
+	<h1 class="display-1 text-center">Mejores Boxeadores</h1> <br>
+	<div class="row g-2">
+		<div class="col-md d-flex justify-content-start">
+			<label class="lead" for="buscar">&ensp;<strong>Buscar</strong>&ensp;</label>
+			<input type="hidden" id="_csrf" name="_csrf" value="<%= csrfToken %>">
+			<input type="text" id="buscar" name="buscar" onkeyup="buscar()">
+		</div>
+		<div class="col-md d-grid gap-2 d-md-flex justify-content-md-end">
+			<% if(isLogged) { %>
+				<a class="btn btn-dark" href="/boxeadores/agregarboxeador" title="AGREGAR BOXEADOR">+</a>&ensp;
+			<% } %>
+		</div>
+	</div>
+		<br>
+		<div class="container">
+			<div class="row" id="resultados">
+				<%for (let boxeador of lista_boxeadores) { %>
+				<div class="card mx-auto col-lg-4 col-md-6 col-sm-12">
+					<img src="<%= boxeador.imagen %>" class="card-img-top" alt="foto" height="100%">
+					<div class="card-body">
+						<h5 class="card-title"><%= boxeador.nombre + " " + boxeador.apellido %></h5>
+					</div>
+				</div>
+				<% } %>
+			</div>
+		</div>
+	<footer>	
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+		</script>
+	</footer>
+</body>
+</html>
+
+<script>
+	function buscar() {
+		const valor_busqueda = document.getElementById('buscar').value;
+	    const csrf = document.getElementById('_csrf').value;
+
+	    let data = {valor_busqueda: valor_busqueda};
+
+	    fetch('/boxeadores/buscar', {
+	        method: 'POST',
+	        body: JSON.stringify(data),
+	        headers: {
+	            'csrf-token': csrf,
+	            'Content-Type': 'application/json'
+	          },
+	    }).then(result => {
+	        return result.json();
+	    }).then(data => {
+	    	let html = '';
+	        for (let boxeador of data) {
+				html += '<div class="card mx-auto col-lg-4 col-md-6 col-sm-12">' + 
+					'<img src="'+ boxeador.imagen +'" class="card-img-top" alt="foto" height="100%">'+
+					'<div class="card-body">' +
+						'<h5 class="card-title">'+ boxeador.nombre + " " + boxeador.apellido +'</h5>'+
+					'</div>' +
+				'</div>';
+			}
+			document.getElementById("resultados").innerHTML = html;
+		}).catch(err => {
+        console.log(err);
+    	});
+	}
+</script>

@@ -2,12 +2,8 @@ const path = require('path');
 const Boxeador = require('../models/boxeador');
 
 exports.getAgregarBoxeador = (request, response, next) => {
-    if (!request.session.isLogged) {
-        return response.redirect('/users');
-    }
 	response.render('agregarboxeador', {
 		titulo: 'Agregar boxeador',
-        csrfToken: request.csrfToken(),
 		isLogged: request.session.isLogged === true ? true : false
 	});
 };

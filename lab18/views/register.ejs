@@ -3,7 +3,7 @@
 	<%- include('partials/navbar.ejs') %>
 	<h1 class="display-1 text-center"><%= titulo %></h1>
 		<br>
-		 <form class="row g-3" action="/users/register" method="POST">
+		 <form class="row g-3" action="/users/register?_csrf=<%=csrfToken%>" method="POST">
 		 	<div class="row g-3">
 		 		<div class="col">
 					<input required type="text" name="name" class="form-control" placeholder="name" aria-label="password">

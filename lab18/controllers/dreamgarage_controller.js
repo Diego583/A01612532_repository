@@ -4,7 +4,6 @@ const Auto = require('../models/auto');
 exports.getAgregarAuto = (request, response, next) => {
 	response.render('agregarauto', {
 		titulo: 'Agregar auto',
-        csrfToken: request.csrfToken(),
 		isLogged: request.session.isLogged === true ? true : false
 	});
 };

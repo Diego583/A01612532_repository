@@ -1,12 +1,22 @@
+const express = require('express');
+const bodyParser = require('body-parser')
+const path = require('path');
+const app = express();
+var cookieParser = require('cookie-parser')
+const session = require('express-session');
 const csrf = require('csurf');
 const csrfProtection = csrf();
-const express = require('express');
-const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 const rutasboxeadores = require('./routes/boxeadores');
 const rutasautos = require('./routes/autos');
 const rutasUsers = require('./routes/users');
-const path = require('path');
-const session = require('express-session');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cookieParser());
 
 app.use(session({
     secret: 'cuatro veinte siete cero tres veinte veintiuno', 
@@ -16,12 +26,16 @@ app.use(session({
 
 app.use(csrfProtection); 
 
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken();
+    next();
+});
+
+
 app.use('/boxeadores', rutasboxeadores);
 app.use('/autos', rutasautos);
 app.use('/users', rutasUsers);
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'ejs');
-app.set('views', 'views');
+
 
 app.get('/', (request, response, next) => {
     response.sendFile(path.join(__dirname,'views', 'git.html'));

@@ -1,10 +1,10 @@
 const express = require('express');
+const isAuth = require('../util/is-auth');
 const path = require('path');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const boxeadoresController = require('../controllers/boxeadores_controller');
 var cookieParser = require('cookie-parser');
-const isAuth = require('../util/is-auth');
 
 router.use(bodyParser.urlencoded({extended: false}));
 router.use(cookieParser());
